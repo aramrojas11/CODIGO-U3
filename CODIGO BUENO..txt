@@ -1,59 +1,71 @@
-using System;
+
+   
+  using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Estructura_de_datos
+namespace ProgramaLunesU_3
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("BIENVENIDO AL PROGRAMA DE ESTRUCTURA DE DATOS");
+            
             int opcion = 0;
             while (opcion != 8)
             {
                 Console.WriteLine("\n1. Invertir la posicion de los valores de un vector");
-                Console.WriteLine("2. Averiguar si una lista de numeros esta ordenada de menor a mayor");
+                Console.WriteLine("2. Averiguar los numeros esta ordenados de menor a mayor");
                 Console.WriteLine("3. Averiguar si una lista de numeros esta ordenada de manera estrictamente creciente");
                 Console.WriteLine("4. Averiguar si una lista de numeros tiene numeros repetidos");
                 Console.WriteLine("5. Ordenar una lista de numeros de menor a mayor");
                 Console.WriteLine("6. Buscar si esta un numero en especifico de una lista de numeros");
                 Console.WriteLine("7. Hallar el promedio de un vector de numeros");
                 Console.WriteLine("8. Salir");
-                Console.WriteLine("Elija una opcion");
+                Console.WriteLine("elije una opción");
                 try
                 {
                     opcion = Convert.ToInt32(Console.ReadLine());
                     switch (opcion)
                     {
                         case 1:
+                            Console.Clear();
                             Invertir();
                             break;
                         case 2:
+                            Console.Clear();
                             Ordenado();
                             break;
                         case 3:
+                            Console.Clear();
                             OrdenadoEstricto();
                             break;
                         case 4:
+                            Console.Clear();
                             Repetidos();
                             break;
                         case 5:
+                            Console.Clear();
                             Ordenar();
                             break;
                         case 6:
+                            Console.Clear();
                             Buscar();
                             break;
                         case 7:
+                            Console.Clear();
                             Promedio();
                             break;
                         case 8:
-                            Console.WriteLine("Gracias por usar el programa :)");
+                            Console.Clear();
+                            Console.WriteLine("adios papu");
                             break;
+                            
                         default:
-                            Console.WriteLine("Opcion invalida");
+                            Console.Clear();
+                            Console.WriteLine("Ingresa una opcion valida");
                             break;
                     }
                 }
@@ -301,7 +313,7 @@ namespace Estructura_de_datos
             }
             static void Promedio()
             {
-               try
+                try
                 {
                     Console.WriteLine("Ingrese el tamaño del vector");
                     int tam = Convert.ToInt32(Console.ReadLine());
