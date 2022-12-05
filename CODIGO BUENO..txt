@@ -1,6 +1,4 @@
-
-   
-  using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,22 +11,22 @@ namespace ProgramaLunesU_3
         static void Main(string[] args)
         {
             
-            int opcion = 0;
-            while (opcion != 8)
+            int op = 0;
+            while (op != 8)
             {
-                Console.WriteLine("\n1. Invertir la posicion de los valores de un vector");
-                Console.WriteLine("2. Averiguar los numeros esta ordenados de menor a mayor");
-                Console.WriteLine("3. Averiguar si una lista de numeros esta ordenada de manera estrictamente creciente");
-                Console.WriteLine("4. Averiguar si una lista de numeros tiene numeros repetidos");
-                Console.WriteLine("5. Ordenar una lista de numeros de menor a mayor");
-                Console.WriteLine("6. Buscar si esta un numero en especifico de una lista de numeros");
-                Console.WriteLine("7. Hallar el promedio de un vector de numeros");
-                Console.WriteLine("8. Salir");
-                Console.WriteLine("elije una opción");
+                Console.WriteLine("\n Invertir la posicion de los valores de un vector (1)");
+                Console.WriteLine(" Averiguar los numeros esta ordenados de menor a mayor (2)");
+                Console.WriteLine(" Averiguar si una lista de numeros esta ordenada de manera estrictamente creciente (3)");
+                Console.WriteLine(" Averiguar si una lista de numeros tiene numeros repetidos (4)");
+                Console.WriteLine(" Ordenar una lista de numeros de menor a mayor (4)");
+                Console.WriteLine(" Buscar si esta un numero en especifico de una lista de numeros (5) ");
+                Console.WriteLine(" Hallar el promedio de un vector de numeros (6)");
+                Console.WriteLine(" Salir");
+                Console.WriteLine("selecciona una opción");
                 try
                 {
-                    opcion = Convert.ToInt32(Console.ReadLine());
-                    switch (opcion)
+                    op = Convert.ToInt32(Console.ReadLine());
+                    switch (op)
                     {
                         case 1:
                             Console.Clear();
@@ -44,7 +42,7 @@ namespace ProgramaLunesU_3
                             break;
                         case 4:
                             Console.Clear();
-                            Repetidos();
+                            N_Repetidos();
                             break;
                         case 5:
                             Console.Clear();
@@ -82,21 +80,21 @@ namespace ProgramaLunesU_3
                 {
                     Console.WriteLine("Ingrese el tamaño del vector");
                     int tam = Convert.ToInt32(Console.ReadLine());
-                    int[] vector = new int[tam];
+                    int[] vec = new int[tam];
                     for (int i = 0; i < tam; i++)
                     {
                         Console.WriteLine("Ingrese un numero");
-                        vector[i] = Convert.ToInt32(Console.ReadLine());
+                        vec[i] = Convert.ToInt32(Console.ReadLine());
                     }
                     Console.WriteLine("El vector original es: ");
                     for (int i = 0; i < tam; i++)
                     {
-                        Console.Write(vector[i] + " ");
+                        Console.Write(vec[i] + " ");
                     }
                     Console.WriteLine("\nEl vector invertido es: ");
                     for (int i = tam - 1; i >= 0; i--)
                     {
-                        Console.Write(vector[i] + " ");
+                        Console.Write(vec[i] + " ");
                     }
                 }
                 catch (Exception)
@@ -110,16 +108,16 @@ namespace ProgramaLunesU_3
                 {
                     Console.WriteLine("Ingrese el tamaño de la lista");
                     int tam = Convert.ToInt32(Console.ReadLine());
-                    int[] vector = new int[tam];
+                    int[] vec = new int[tam];
                     for (int i = 0; i < tam; i++)
                     {
                         Console.WriteLine("Ingrese un numero");
-                        vector[i] = Convert.ToInt32(Console.ReadLine());
+                        vec[i] = Convert.ToInt32(Console.ReadLine());
                     }
                     int cont = 0;
                     for (int i = 0; i < tam - 1; i++)
                     {
-                        if (vector[i] <= vector[i + 1])
+                        if (vec[i] <= vec[i + 1])
                         {
                             cont++;
                         }
@@ -127,7 +125,7 @@ namespace ProgramaLunesU_3
                     Console.WriteLine("La lista de numeros ingresada es: ");
                     for (int i = 0; i < tam; i++)
                     {
-                        Console.Write(vector[i] + " ");
+                        Console.Write(vec[i] + " ");
                     }
                     if (cont == tam - 1)
                     {
@@ -182,7 +180,7 @@ namespace ProgramaLunesU_3
                     Console.WriteLine("Valor no valido");
                 }
             }
-            static void Repetidos()
+            static void N_Repetidos()
             {
                 try
                 {
@@ -205,14 +203,14 @@ namespace ProgramaLunesU_3
                             }
                         }
                     }
-                    Console.WriteLine("La lista de numeros ingresada es: ");
+                    Console.WriteLine("La lista que ingresaste es: ");
                     for (int i = 0; i < tam; i++)
                     {
                         Console.Write(vector[i] + " ");
                     }
                     if (cont > 0)
                     {
-                        Console.WriteLine("\nLa lista tiene numeros repetidos,los cuales son: ");
+                        Console.WriteLine("La lista si contiene numeros repetidos: ");
                         for (int i = 0; i < tam - 1; i++)
                         {
                             for (int j = i + 1; j < tam; j++)
@@ -259,7 +257,7 @@ namespace ProgramaLunesU_3
                             }
                         }
                     }
-                    Console.WriteLine("\nLa lista ordenada de menor a mayor es: ");
+                    Console.WriteLine("\nLa lista de menor a mayor es: ");
                     for (int i = 0; i < tam; i++)
                     {
                         Console.Write(vector[i] + " ");
@@ -274,7 +272,7 @@ namespace ProgramaLunesU_3
             {
                 try
                 {
-                    Console.WriteLine("Ingrese el tamaño de la lista");
+                    Console.WriteLine("ingresa el tamaño de la lista");
                     int tam = Convert.ToInt32(Console.ReadLine());
                     int[] vector = new int[tam];
                     for (int i = 0; i < tam; i++)
@@ -282,7 +280,7 @@ namespace ProgramaLunesU_3
                         Console.WriteLine("Ingrese un numero");
                         vector[i] = Convert.ToInt32(Console.ReadLine());
                     }
-                    Console.WriteLine("Ingrese el numero que desea buscar");
+                    Console.WriteLine("Ingeresa el numero que quieres buscar");
                     int num = Convert.ToInt32(Console.ReadLine());
                     int cont = 0;
                     for (int i = 0; i < tam; i++)
@@ -299,11 +297,11 @@ namespace ProgramaLunesU_3
                     }
                     if (cont > 0)
                     {
-                        Console.WriteLine("\nEl numero " + num + " si se encuentra en la lista y se repite " + cont + " veces");
+                        Console.WriteLine("\nEl numero  si se encuentra en la lista y se repite " + cont + " veces");
                     }
                     else
                     {
-                        Console.WriteLine("\nEl numero " + num + " no se encuentra en la lista");
+                        Console.WriteLine("\nEl numero que diste no se encuentra en la lista");
                     }
                 }
                 catch (Exception)
@@ -315,12 +313,12 @@ namespace ProgramaLunesU_3
             {
                 try
                 {
-                    Console.WriteLine("Ingrese el tamaño del vector");
+                    Console.WriteLine("De que tamaño deseas el tamaño del vector");
                     int tam = Convert.ToInt32(Console.ReadLine());
                     int[] vector = new int[tam];
                     for (int i = 0; i < tam; i++)
                     {
-                        Console.WriteLine("Ingrese un numero");
+                        Console.WriteLine("Ingresa un numero");
                         vector[i] = Convert.ToInt32(Console.ReadLine());
                     }
                     int suma = 0;
@@ -344,6 +342,9 @@ namespace ProgramaLunesU_3
         }
     }
 }
+   
+ 
+               
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
