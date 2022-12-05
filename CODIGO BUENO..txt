@@ -332,3 +332,66 @@ namespace Estructura_de_datos
         }
     }
 }
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace pierdrapapelÓtijera
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Este es un programa para jugar Piedra papel o tijera");
+            while (true)
+            {
+                Console.WriteLine("Selecciona lo que quieras (Piedra, papel o tijera). ");
+                string elec = Console.ReadLine();
+                if (elec == "salir")
+                {
+                    break;
+                }
+                if (elec == "piedra" || elec == "papel" || elec == "tijera")
+                {
+                    Random rnd = new Random();
+                    int numeroAleatorio = rnd.Next(0, 3);
+                    string[] opciones = new string[] { "piedra", "papel", "tijera" };
+                    string E_M = opciones[numeroAleatorio];
+                    Console.WriteLine("El programa eligio: " + E_M);
+                    if (elec == E_M)
+                    {
+                        Console.WriteLine("Empataron papus");
+                    }
+                    else if (elec == "Piedra" && E_M == "tijera")
+                    {
+                        Console.WriteLine("Tu ganaste viejo viejo.");
+                    }
+                    else if (elec == "Papel" && E_M == "Piedra")
+                    {
+                        Console.WriteLine("Tu ganaste viejo viejo.");
+                    }
+                    else if (elec == "Tijera" && E_M == "Papel")
+                    {
+                        Console.WriteLine("Tu ganaste viejo viejo.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Perdiste, ¡estas reprobado!");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Solo puedes escribir: piedra, papel ó tijera");
+                }
+            }
+
+
+        }
+    }
+}
